@@ -57,6 +57,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'launchy'
   gem 'poltergeist'
+  gem 'dotenv-rails'
 end
 
 group :development do
