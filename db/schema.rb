@@ -10,9 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20161023160412) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "cats", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "logs", force: :cascade do |t|
+    t.integer  "cat_id"
+    t.decimal  "weight",     precision: 4, scale: 2
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+    t.index ["cat_id"], name: "index_logs_on_cat_id", using: :btree
+  end
+
+  add_foreign_key "logs", "cats"
 end

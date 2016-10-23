@@ -1,0 +1,7 @@
+ja:
+  activerecord:
+    attributes:
+      cat:
+        name: '名前'
+      log:
+        weight: '体重'

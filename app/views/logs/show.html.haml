@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Cat:
+  = @log.cat
+%p
+  %b Weight:
+  = @log.weight
+
+= link_to 'Edit', edit_log_path(@log)
+\|
+= link_to 'Back', logs_path

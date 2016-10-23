@@ -1,0 +1,21 @@
+%h1= t('.title', name: @cat.name)
+
+= simple_form_for [@cat, Log.new], html: {class: 'form-inline'} do |f|
+  = f.input :weight, required: false, label: false, placeholder: '体重(kg)'
+  = f.submit class: 'btn btn-primary'
+
+- if @logs.present?
+  %table.table.table-striped
+    %thead
+      %tr
+        %th= Log.human_attribute_name :weight
+        %th
+        %th
+    %tbody
+      - @logs.each do |log|
+        %tr
+          %td= l log.created_at
+          %td #{log.weight} kg
+          %td= link_to t('.destroy'), cat_log_path(@cat, log), :method => :delete, :data => { :confirm => 'Are you sure?' }
+- else
+  = t('.empty')

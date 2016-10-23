@@ -1,0 +1,15 @@
+ja:
+  home:
+    index:
+      logs: '記録'
+      new_cat: '新しい猫を登録'
+  cats:
+    index:
+      title: '猫リスト'
+    new:
+      title: '猫の登録'
+  logs:
+    index:
+      title: '%{name}の記録'
+      empty: 'まだ記録はありません'
+      destroy: '削除'

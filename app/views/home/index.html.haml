@@ -1,2 +1,12 @@
 .jumbotron
   %h1.display-3 Hello, World!
+
+%table.cats-table
+  %tbody
+    - @cats.each do |cat|
+      %tr
+        %td.cats-table__link-column= link_to t('.logs'), cat_logs_path(cat), class: 'btn btn-success'
+        %td.cats-table__name-column= cat.name
+
+.text-xs-right
+  = link_to fa_icon('plus', text: t('.new_cat')), new_cat_path, class: 'btn btn-link'
